@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { User } from "lucide-react"
 import { useState, useEffect } from "react"
-import { RainbowButton } from "./magicui/rainbow-button"
+import { RainbowButton } from "./ui/rainbow-button"
 import Image from "next/image"
 
 const icons = [
