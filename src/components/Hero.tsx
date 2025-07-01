@@ -74,7 +74,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
             {/* Vertical line in the middle */}
-            <div className="fixed z-10 left-1/2 top-0 w-px h-full bg-gradient-to-b from-slate-600 via-slate-500 to-slate-600 transform -translate-x-1/2 " />
+            <div className="absolute z-10 left-1/2 top-0 w-px h-full bg-gradient-to-b from-slate-600 via-slate-500 to-slate-600 transform -translate-x-1/2 " />
 
             {/* Moving light spot */}
             <div
