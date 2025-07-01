@@ -22,7 +22,6 @@ const icons = [
 
 export default function Hero() {
     const [scrollY, setScrollY] = useState(0)
-    const [showImage, setShowImage] = useState(false);
     const [showFirstImage, setShowFirstImage] = useState(false);
 
 
@@ -47,7 +46,7 @@ export default function Hero() {
 
     const firstImageStart = 400
     const firstImagePlateStart = 600
-    const firstImageRotation = Math.min(75, Math.max(0, (scrollY - firstImagePlateStart) * 0.15));
+    const firstImageRotation = Math.min(750, Math.max(0, (scrollY - firstImagePlateStart) * 0.25));
 
     // Calculate light position - this should always follow scroll position when light is visible
     const lightTop = scrollY * 0.3 + 100
@@ -105,7 +104,7 @@ export default function Hero() {
                 {/* Patient interface and compliance badges - moved to right side */}
                 <div className=" text-white flex flex-row items-center justify-between px-10">
                     <div className="px-4 w-[500px] flex justify-start-safe">
-                        <p>Heidi is the ambient AI medical scribe that automates clinical documentation to reduce administrative burden and enable healthcare professionals to focus more on patient care.</p>
+                        <p className=" text-base font-normal">Heidi is the ambient AI medical scribe that automates clinical documentation to reduce administrative burden and enable healthcare professionals to focus more on patient care.</p>
                     </div>
                     <div className="px-4 w-[400px] flex justify-end-safe">
                         <div className="grid grid-cols-4 gap-1">
@@ -124,22 +123,26 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Scroll-triggered image section */}
-                <div className="flex justify-center items-center min-h-screen relative">
+                {/* First scroll-triggered image section with 3D plate effect */}
+                <div className="flex justify-center items-center min-h-screen relative mb-32" style={{ perspective: "500px" }}>
                     <div
-                        className={`transition-all duration-1000 ease-out ${showImage ? "opacity-100 scale-110 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
+                        className={`transition-all duration-1000 ease-out ${showFirstImage ? "opacity-100 scale-260 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
                             }`}
+                        style={{
+                            transform: `rotateX(${firstImageRotation}deg) scale(${showFirstImage ? 0.8 : 0.75})`,
+                            transformStyle: "preserve-3d",
+                        }}
                     >
                         <div className="relative">
                             {/* Glowing effect behind image */}
                             <div
-                                className={`absolute inset-0 bg-blue-500/20 rounded-2xl blur-2xl transition-all duration-1000 ${showImage ? "scale-150 opacity-100" : "scale-100 opacity-0"
+                                className={`absolute inset-0 bg-blue-500/20 rounded-2xl blur-2xl transition-all duration-100 ${showFirstImage ? "scale-100 opacity-100" : "scale-100 opacity-0"
                                     }`}
                             />
 
                             {/* Main image */}
-                            <img
-                                src="/placeholder.svg?height=400&width=600"
+                            <Image
+                                src="/promt.webp?height=400&width=600"
                                 alt="Medical AI Interface"
                                 className="relative z-10 rounded-2xl border border-slate-700 bg-slate-800"
                                 width={600}
@@ -148,7 +151,7 @@ export default function Hero() {
 
                             {/* Additional glow overlay */}
                             <div
-                                className={`absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent rounded-2xl transition-opacity duration-1000 ${showImage ? "opacity-100" : "opacity-0"
+                                className={`absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent rounded-2xl transition-opacity duration-1000 ${showFirstImage ? "opacity-100" : "opacity-0"
                                     }`}
                             />
                         </div>
