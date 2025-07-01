@@ -29,19 +29,25 @@ export default function Hero() {
         const handleScroll = () => {
             const currentScrollY = window.scrollY
             setScrollY(currentScrollY)
-
-            // Show first image when scrolled down 400px or more
             setShowFirstImage(currentScrollY > 400)
-            // Show second image when scrolled down 1000px or more
         }
 
         // Set initial scroll position
-        setScrollY(window.scrollY);
+        if (typeof window !== "undefined") {
+            setScrollY(window.scrollY);
+            window.addEventListener("scroll", handleScroll)
+        }
+        return () => {
+            if (typeof window !== "undefined") {
+                window.removeEventListener("scroll", handleScroll)
+            }
+        }
+    }, []);
 
-
-
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     const firstImageStart = 400
@@ -50,6 +56,9 @@ export default function Hero() {
 
     // Calculate light position - this should always follow scroll position when light is visible
     const lightTop = scrollY * 0.3 + 100
+
+    // Get window height safely
+    const windowHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
 
     return (
         <div
@@ -71,7 +80,7 @@ export default function Hero() {
             <div
                 className="fixed left-1/2 w-4 h-4 bg-white rounded-full blur-sm transform -translate-x-1/2 transition-all duration-100 ease-out z-30"
                 style={{
-                    top: `${Math.min(scrollY * 0.5 + 100, window.innerHeight - 100)}px`,
+                    top: `${Math.min(scrollY * 0.5 + 100, windowHeight - 100)}px`,
                     boxShadow: "0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4)",
                 }}
             />
