@@ -44,6 +44,11 @@ export default function Hero() {
         return () => window.removeEventListener("scroll", handleScroll)
     }, []);
 
+    useEffect(() => {
+        // This runs only on the client
+        window.scrollTo(0, 0);
+    }, []);
+
     const firstImageStart = 400
     const firstImagePlateStart = 600
     const firstImageRotation = Math.min(750, Math.max(0, (scrollY - firstImagePlateStart) * 0.25));
