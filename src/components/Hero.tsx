@@ -1,12 +1,23 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { User } from "lucide-react"
 import { useState, useEffect } from "react"
 import { RainbowButton } from "./ui/rainbow-button"
-import Image from "next/image"
+import Image from "next/image";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay";
+
+const carouselImages = [
+    "/doucement.webp",
+    "/doucement.webp",
+    "/doucement.webp",
+]
 
 const icons = [
 
@@ -22,14 +33,13 @@ const icons = [
 
 export default function Hero() {
     const [scrollY, setScrollY] = useState(0)
-    const [showFirstImage, setShowFirstImage] = useState(false);
-
+    const [showCarousel, setShowCarousel] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY
             setScrollY(currentScrollY)
-            setShowFirstImage(currentScrollY > 400)
+            setShowCarousel(currentScrollY > 400)
         }
 
         // Set initial scroll position
@@ -50,19 +60,12 @@ export default function Hero() {
         }
     }, []);
 
-    const firstImageStart = 400
-    const firstImagePlateStart = 600
-    const firstImageRotation = Math.min(750, Math.max(0, (scrollY - firstImagePlateStart) * 0.25));
-
-    // Calculate light position - this should always follow scroll position when light is visible
-    const lightTop = scrollY * 0.3 + 100
-
     // Get window height safely
     const windowHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
 
     return (
         <div
-            className=" bg-slate-950 relative"
+            className=" bg-slate-950 relative pt-24"
             style={{
                 backgroundImage: "url(/background-image.svg),  url(/background-bottom.svg)",
                 backgroundSize: "1500px, 1300px",
@@ -132,37 +135,51 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* First scroll-triggered image section with 3D plate effect */}
                 <div className="flex justify-center items-center min-h-screen relative mb-32" style={{ perspective: "500px" }}>
                     <div
-                        className={`transition-all duration-1000 ease-out ${showFirstImage ? "opacity-100 scale-260 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
+                        className={`transition-all duration-1000 ease-out ${showCarousel ? "opacity-100 scale-100 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
                             }`}
                         style={{
-                            transform: `rotateX(${firstImageRotation}deg) scale(${showFirstImage ? 0.8 : 0.75})`,
+                            transform: ` scale(${showCarousel ? 0.8 : 0.99})`,
                             transformStyle: "preserve-3d",
                         }}
                     >
                         <div className="relative">
-                            {/* Glowing effect behind image */}
+                            {/* Glowing effect behind carousel */}
                             <div
-                                className={`absolute inset-0 bg-blue-500/20 rounded-2xl blur-2xl transition-all duration-100 ${showFirstImage ? "scale-100 opacity-100" : "scale-100 opacity-0"
+                                className={`absolute inset-0 bg-blue-500/20 rounded-2xl blur-2xl transition-all duration-1000 ${showCarousel ? "scale-10 opacity-100" : "scale-100 opacity-0"
                                     }`}
                             />
 
-                            {/* Main image */}
-                            <Image
-                                src="/promt.webp?height=400&width=600"
-                                alt="Medical AI Interface"
-                                className="relative z-10 rounded-2xl border border-slate-700 bg-slate-800"
-                                width={600}
-                                height={400}
-                            />
+                            {/* Shadcn UI Carousel */}
+                            <Carousel
+                                className="w-full rounded-[30px] relative z-20"
+                                plugins={[
+                                    Autoplay({
+                                        delay: 5000,
+                                    }),
+                                ]}
 
-                            {/* Additional glow overlay */}
-                            <div
-                                className={`absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent rounded-2xl transition-opacity duration-1000 ${showFirstImage ? "opacity-100" : "opacity-0"
-                                    }`}
-                            />
+
+                            >
+                                <CarouselContent>
+                                    {carouselImages.map((image, index) => (
+                                        <CarouselItem key={index}>
+                                            <div className="relative">
+                                                <Image
+                                                    src={image || "/placeholder.svg"}
+                                                    alt={`Medical AI Interface ${index + 1}`}
+                                                    className="rounded w-full"
+                                                    width={600}
+                                                    height={280}
+                                                />
+                                                {/* Additional glow overlay */}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent rounded-4xl" />
+                                            </div>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                            </Carousel>
                         </div>
                     </div>
                 </div>
