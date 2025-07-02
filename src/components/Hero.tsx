@@ -114,11 +114,11 @@ export default function Hero() {
                 </div>
 
                 {/* Patient interface and compliance badges - moved to right side */}
-                <div className=" text-white flex flex-row items-center justify-between px-10">
-                    <div className="px-4 w-[500px] flex justify-start-safe">
+                <div className=" text-white flex md:flex-row flex-col items-center md:justify-between md:px-10 gap-5">
+                    <div className="md:px-4 p-1 w-full md:w-[500px] flex md:justify-start-safe">
                         <p className=" text-base font-normal">Healthzenix is the ambient AI medical scribe that automates clinical documentation to reduce administrative burden and enable healthcare professionals to focus more on patient care.</p>
                     </div>
-                    <div className="px-4 w-[400px] flex justify-end-safe">
+                    <div className="px-4 md:w-[400px] w-full flex md:justify-end-safe">
                         <div className="grid grid-cols-4 gap-1">
                             {
                                 icons.map((icon, index) => (

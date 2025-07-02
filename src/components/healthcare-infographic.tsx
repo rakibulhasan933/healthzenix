@@ -4,22 +4,22 @@ import { Card, CardContent } from "@/components/ui/card"
 
 export default function HealthcareInfographic() {
     return (
-        <div className=" mx-20 px-6 py-24 bg-white ">
+        <div className=" md:mx-20 mx-2 md:px-6 px-2 md:py-24 py-8 bg-white ">
             <div className="max-w-4xl">
                 {/* Header Section */}
-                <div className=" mb-8">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <div className=" md:mb-8 mb-3">
+                    <h1 className="text-xl md:text-5xl font-bold text-gray-900 mb-4">
                         <span className="text-blue-600">50%</span> of clinicians' time is <span className="text-blue-600">not</span>
                         <br />
                         spent on patient care
                     </h1>
-                    <p className="text-gray-600 text-lg max-w-2xl mb-6">
+                    <p className="text-gray-600 md:text-lg text-base md:max-w-2xl md:mb-6 mb-2">
                         Learn how clinics, surgeries, hospitals, and studios of all walks of clinical life are using Heidi Health's AI
                         medical scribe.
                     </p>
                 </div>
                 {/* Main Image */}
-                <div className="mb-8">
+                <div className="md:mb-8 mb-3">
                     <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                         <iframe
                             src={"https://www.youtube.com/embed/d1szNOqCs4U?si=NWEWIW_A5MA_BwcQ"}
