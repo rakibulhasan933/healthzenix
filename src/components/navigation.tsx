@@ -14,7 +14,7 @@ export function Navigation() {
                     {/* Logo */}
                     <div className="flex items-center">
                         <a href="/" className="text-2xl font-bold text-indigo-600">
-                            heidi
+                            Healthzenix
                         </a>
                     </div>
 

@@ -8,7 +8,7 @@ export default function TestimonialsSection() {
             headline: "About our work-from-home series!",
             content:
                 "Heidi Health found me at a time when our clinic was transitioning to telehealth. The ability to have an AI scribe to capture sessions and take HIPAA compliant protected therapeutic file notes has been a game changer for our clinic and our patients.",
-            image: "/placeholder.svg?height=80&width=80",
+            image: "/1.png?height=80&width=80",
         },
         {
             name: "Corey Dickinson",
@@ -16,7 +16,7 @@ export default function TestimonialsSection() {
             headline: "I'm always confident work to be more effective and more efficient",
             content:
                 "I'm always confident work to be more effective and more efficient with AI. Getting a real 'boost in the clinical space is how often I have been able to see more patients and recommend it to clinicians and docs that take a hectic schedule.",
-            image: "/placeholder.svg?height=80&width=80",
+            image: "/2.png?height=80&width=80",
         },
         {
             name: "Christopher Rodriguez",
@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
             headline: "Excellent! Support is Great and Phenomenal",
             content:
                 "Thanks a bunch, I requested a template but created for one with my specific needs. The support team did an excellent job helping me navigate all the important and key aspects of the template and performed flawlessly.",
-            image: "/placeholder.svg?height=80&width=80",
+            image: "/3.png?height=80&width=80",
         },
         {
             name: "Shanice Schart",
@@ -32,12 +32,12 @@ export default function TestimonialsSection() {
             headline: "Resident time saver!",
             content:
                 "It was drafted so perfect I told for my clinic sessions. It has some real time saving features that help me get my patients quicker than expected. The time-blocking is amazing!",
-            image: "/placeholder.svg?height=80&width=80",
+            image: "/5.png?height=80&width=80",
         },
     ]
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:py-20 py-8 gap-6">
             {testimonials.map((testimonial, index) => (
                 <TestimonialCard key={index} {...testimonial} />
             ))}
