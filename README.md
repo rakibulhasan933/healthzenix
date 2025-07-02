@@ -5,7 +5,7 @@
 Welcome to **HealthZenix** — the AI medical scribe for all clinicians.  
 This project is built with [Next.js](https://nextjs.org) and bootstrapped using [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
----
+--- 
 
 ## 🚀 Live Demo
 
