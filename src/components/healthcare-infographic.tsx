@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 export default function HealthcareInfographic() {
     return (
-        <div className=" mx-20 p-6 bg-white ">
+        <div className=" mx-20 px-6 py-24 bg-white ">
             <div className="max-w-4xl">
                 {/* Header Section */}
                 <div className=" mb-8">
@@ -34,7 +34,7 @@ export default function HealthcareInfographic() {
 
 
             {/* Statistics Cards */}
-            <div className=" md:max-w-6xl grid md:grid-cols-3 gap-6 ">
+            <div className=" w-full grid md:grid-cols-3 gap-6 ">
                 <Card className="border border-gray-200 hover:shadow-md transition-shadow">
                     <CardContent className="p-6 ">
                         <div className="mb-4">

@@ -1,33 +1,33 @@
 "use client"
 
 import { useState } from "react"
-import { Mic, MessageSquare, FileText } from "lucide-react"
+import { Mic, MessageSquare, FileText, Upload, Brain } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const steps = [
     {
         id: 1,
-        title: "Transcribe",
+        title: "Upload File",
         description: "Press start at the beginning of your visit and Heidi will capture every salient detail.",
-        icon: Mic,
+        icon: Upload,
         color: "from-blue-500 to-blue-600",
         bgColor: "bg-blue-600",
     },
     {
         id: 2,
-        title: "Customize",
+        title: "Analysis",
         description: "Pick your preferred template and watch as Heidi writes your perfect note.",
-        icon: MessageSquare,
-        color: "from-purple-500 to-purple-600",
-        bgColor: "bg-purple-600",
+        icon: Brain,
+        color: "from-blue-500 to-blue-600",
+        bgColor: "bg-blue-600",
     },
     {
         id: 3,
         title: "Output",
         description: "Ask Heidi questions about your patient and get instant, accurate answers for better care.",
         icon: FileText,
-        color: "from-green-500 to-green-600",
-        bgColor: "bg-green-600",
+        color: "from-blue-500 to-blue-600",
+        bgColor: "bg-blue-600",
     },
 ]
 
@@ -96,7 +96,7 @@ export default function TransitionCarousel() {
                 >
 
 
-                    <div className="relative text-center space-y-4">
+                    <div className="relative text-center space-y-2">
                         <h3
                             className={cn("font-bold text-gray-900 transition-all duration-500", isCenter ? "text-2xl" : "text-lg")}
                         >
@@ -127,9 +127,10 @@ export default function TransitionCarousel() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col items-center justify-center p-4">
-            <div className="max-w-7xl w-full">
+        <div className="min-h-screen py-5 md:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col items-center justify-center p-4">
+            <div className="w-full">
                 {/* Header */}
+
                 <div className="text-center mb-16">
                     <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent mb-4">
                         Weirdly easy.
@@ -138,7 +139,7 @@ export default function TransitionCarousel() {
                 </div>
 
                 {/* Always Visible Icons */}
-                <div className="flex justify-center items-center gap-8 mb-16">
+                <div className="flex justify-center items-center gap-8">
                     {steps.map((step) => {
                         const IconComponent = step.icon
                         const isActive = activeStep === step.id
