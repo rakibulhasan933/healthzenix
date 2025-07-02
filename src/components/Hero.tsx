@@ -96,7 +96,7 @@ export default function Hero() {
             <div className="relative z-10 flex justify-center pt-8 pb-4">
                 <div className="flex items-center gap-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full px-4 py-1 text-[12px] text-slate-300">
                     <div className="w-1 h-1 bg-white rounded-full" />
-                    <span>Heidi Product Updates - Tasks and past sessions as Context</span>
+                    <span>Healthzenix Product Updates - Tasks and past sessions as Context</span>
                 </div>
             </div>
 
@@ -109,14 +109,14 @@ export default function Hero() {
                         <span className="text-slate-300">for all clinicians</span>
                     </h1>
                     <RainbowButton className="relative px-4 py-6 z-60">
-                        <span>Try Heidi - it's free</span>
+                        <span>Try Healthzenix - it's free</span>
                     </RainbowButton>
                 </div>
 
                 {/* Patient interface and compliance badges - moved to right side */}
                 <div className=" text-white flex flex-row items-center justify-between px-10">
                     <div className="px-4 w-[500px] flex justify-start-safe">
-                        <p className=" text-base font-normal">Heidi is the ambient AI medical scribe that automates clinical documentation to reduce administrative burden and enable healthcare professionals to focus more on patient care.</p>
+                        <p className=" text-base font-normal">Healthzenix is the ambient AI medical scribe that automates clinical documentation to reduce administrative burden and enable healthcare professionals to focus more on patient care.</p>
                     </div>
                     <div className="px-4 w-[400px] flex justify-end-safe">
                         <div className="grid grid-cols-4 gap-1">
@@ -137,10 +137,10 @@ export default function Hero() {
 
                 <div className="flex justify-center items-center min-h-screen relative mb-32" style={{ perspective: "500px" }}>
                     <div
-                        className={`transition-all duration-1000 ease-out ${showCarousel ? "opacity-100 scale-100 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
+                        className={`transition-all duration-3000 ease-out ${showCarousel ? "opacity-100 scale-100 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
                             }`}
                         style={{
-                            transform: ` scale(${showCarousel ? 0.8 : 0.99})`,
+                            transform: ` scale(${showCarousel ? 0.8 : 0.75})`,
                             transformStyle: "preserve-3d",
                         }}
                     >

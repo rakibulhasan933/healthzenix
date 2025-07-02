@@ -8,7 +8,7 @@ export function Footer() {
                     {/* Brand Section */}
                     <div className="md:col-span-1">
                         <div className="mb-4">
-                            <h3 className="text-2xl font-bold text-indigo-600">heidi</h3>
+                            <h3 className="text-2xl font-bold text-indigo-600">Healthzenix</h3>
                             <p className="text-gray-600 text-sm mt-2">Customized for clinicians, for clinicians</p>
                         </div>
 
@@ -208,7 +208,7 @@ export function Footer() {
 
                 {/* Copyright */}
                 <div className="border-t border-gray-200 mt-12 pt-8">
-                    <p className="text-gray-500 text-sm">© 2025 Heidi. All rights reserved.</p>
+                    <p className="text-gray-500 text-sm">© 2025 Healthzenix. All rights reserved.</p>
                 </div>
             </div>
         </footer>

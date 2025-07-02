@@ -20,7 +20,7 @@ export default function Reclaim() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
                 {/* Top row - two equal cards */}
                 <FeatureCard
-                    title="Ask Heidi"
+                    title="Ask Healthzenix"
                     description="Command your AI medical scribe to do just about anything to or with your note. Heidi has you. Write a referral letter. Fill out a form. Your choice."
                     icon={<MessageSquare className="h-6 w-6 text-pink-500" />}
                     isNew
