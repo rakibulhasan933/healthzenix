@@ -5,7 +5,7 @@ import { MessageSquare, FileText, PenLine, Brain, Users } from "lucide-react"
 
 export default function Reclaim() {
     return (
-        <div className="container mx-auto px-4 py-12 max-w-6xl">
+        <div className="container mx-auto px-4 md:py-24 py-6 max-w-6xl">
             <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold mb-2">
                     <span className="text-indigo-900">Reclaim days of </span>
@@ -17,7 +17,7 @@ export default function Reclaim() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
                 {/* Top row - two equal cards */}
                 <FeatureCard
                     title="Ask Heidi"
@@ -58,7 +58,7 @@ export default function Reclaim() {
                 />
             </div>
 
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-600">
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-gray-600">
                 <div className="flex items-start gap-2">
                     <span className="font-bold text-indigo-900">📝</span>
                     <div>
@@ -96,7 +96,7 @@ interface FeatureCardProps {
 function FeatureCard({ title, description, icon, isNew = false }: FeatureCardProps) {
     return (
         <Card className="p-6 h-full flex flex-col">
-            <div className="bg-gray-50 rounded-full w-12 h-12 flex items-center justify-center mb-4">{icon}</div>
+            <div className="bg-gray-50 rounded-full w-12 h-12 flex items-center justify-center mb-2">{icon}</div>
 
             {isNew && (
                 <div className="mb-2">
@@ -106,7 +106,7 @@ function FeatureCard({ title, description, icon, isNew = false }: FeatureCardPro
                 </div>
             )}
 
-            <h3 className="text-lg font-medium mb-2">{title}</h3>
+            <h3 className="text-lg font-medium mb-1">{title}</h3>
             <p className="text-gray-600 text-sm">{description}</p>
         </Card>
     )
