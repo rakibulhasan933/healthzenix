@@ -30,8 +30,8 @@ Follow these steps to set up and run the project locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/health-zenix.git
-cd health-zenix
+https://github.com/rakibulhasan933/healthzenix.git
+cd healthzenix
 ```
 
 ### 2. Install Dependencies
@@ -39,25 +39,17 @@ cd health-zenix
 Using your preferred package manager:
 
 ```bash
-npm install
-# or
-yarn install
-# or
+
 pnpm install
-# or
-bun install
+
 ```
 
 ### 3. Run the Development Server
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+
 pnpm dev
-# or
-bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
