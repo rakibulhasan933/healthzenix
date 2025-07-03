@@ -17,7 +17,7 @@ export default function Home() {
       <TransitionCarousel />
       <Restore />
       <Reclaim />
-      <div className="mx-20 my-10">
+      <div className="md:mx-10 mx-4 my-10">
         <TestimonialsSection />
       </div>
       <Footer />
