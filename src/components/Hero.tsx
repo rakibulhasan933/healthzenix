@@ -137,7 +137,7 @@ export default function Hero() {
 
                 <div className="flex justify-center items-center  relative md:mb-32 my-10 " style={{ perspective: "1000px" }}>
                     <div
-                        className={`transition-all duration-3000 ease-out ${showCarousel ? "opacity-100 scale-120 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
+                        className={`transition-all duration-3000 ease-out ${showCarousel ? "opacity-100 md:scale-100 scale-120 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
                             }`}
                         style={{
                             transform: ` scale(${showCarousel ? 0.8 : 0.75})`,
