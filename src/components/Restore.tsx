@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Restore() {
     return (
-        <section className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 flex items-center justify-center overflow-hidden">
+        <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 flex items-center justify-center overflow-hidden py-16 md:py-24">
             {/* Background curved lines */}
             <div className="absolute inset-0 opacity-20">
                 <svg
