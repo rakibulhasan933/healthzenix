@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react"
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Contact2 } from "lucide-react"
 
 export function Footer() {
     return (
@@ -17,8 +17,9 @@ export function Footer() {
                                 <Facebook className="h-5 w-5" />
                                 <span className="sr-only">Facebook</span>
                             </a>
-                            <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors">
-                                <Instagram className="h-5 w-5" />
+                            <a href="mailto:support@healthzenix.com" className="text-gray-400 hover:text-gray-600 transition-colors">
+                                <Contact2 className="h-5 w-5" />
+
                                 <span className="sr-only">Instagram</span>
                             </a>
                             <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors">

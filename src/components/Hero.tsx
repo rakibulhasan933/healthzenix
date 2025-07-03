@@ -118,21 +118,6 @@ export default function Hero() {
                     <div className="md:px-4 p-1 w-full md:w-[500px] flex md:justify-start-safe">
                         <p className=" text-base font-normal">Healthzenix is the ambient AI medical scribe that automates clinical documentation to reduce administrative burden and enable healthcare professionals to focus more on patient care.</p>
                     </div>
-                    <div className="px-4 md:w-[400px] w-full flex md:justify-end-safe">
-                        <div className="grid grid-cols-4 gap-1">
-                            {
-                                icons.map((icon, index) => (
-                                    <Badge
-                                        key={index}
-                                        className="m-2  bg-slate-800 border border-slate-700 rounded-lg flex items-center"
-                                    >
-                                        <Image width={40} height={20} src={icon} alt={`Icon ${index + 1}`} />
-
-                                    </Badge>
-                                ))
-                            }
-                        </div>
-                    </div>
                 </div>
 
                 <div className="flex justify-center items-center  relative md:mb-32 my-10 " style={{ perspective: "1000px" }}>

@@ -83,7 +83,7 @@ export default function TransitionCarousel() {
                     <div
                         className={cn(
                             "border-2 border-dashed border-gray-200 rounded-3xl flex items-center justify-center opacity-30",
-                            isMobile ? "w-72 h-80" : "w-80 h-96",
+                            isMobile ? "w-80 h-80" : "w-[500px] h-96",
                         )}
                     >
                         <span className="text-gray-400 text-sm font-medium"></span>
@@ -107,9 +107,9 @@ export default function TransitionCarousel() {
             >
                 <div
                     className={cn(
-                        "relative rounded-3xl p-6 md:p-8 border transition-all duration-500 bg-white",
-                        isMobile ? "w-72 h-80" : "w-80 h-96",
-                        isCenter ? "shadow-2xl border-gray-200 ring-2 ring-gray-100" : "shadow-lg border-gray-100 hover:shadow-xl",
+                        "relative rounded-3xl p-2 md:p-2 border transition-all duration-500 bg-white",
+                        isMobile ? "w-80 h-80" : "w-[500px] h-96",
+                        isCenter ? "shadow-2xl border-white ring-2 ring-gray-100" : "shadow-lg  border-white hover:shadow-xl",
                     )}
                 >
                     <div className="relative text-center space-y-2">
