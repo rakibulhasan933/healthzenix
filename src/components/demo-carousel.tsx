@@ -147,7 +147,7 @@ export default function TransitionCarousel() {
         <div className="min-h-screen py-5 md:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col items-center justify-center p-4">
             <div className="w-full max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-8 md:mb-16">
+                <div className="text-center mb-4">
                     <h1
                         className={cn(
                             "font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent mb-4",
@@ -160,7 +160,7 @@ export default function TransitionCarousel() {
                 </div>
 
                 {/* Step Icons */}
-                <div className={cn("flex justify-center items-center mb-8 md:mb-12", isMobile ? "gap-4" : "gap-8")}>
+                <div className={cn("flex justify-center items-center md:mb-0 mb-4", isMobile ? "gap-4" : "gap-6")}>
                     {steps.map((step) => {
                         const IconComponent = step.icon
                         const isActive = activeStep === step.id
@@ -170,7 +170,7 @@ export default function TransitionCarousel() {
                                 <button
                                     onClick={() => setActiveStep(step.id)}
                                     className={cn(
-                                        "relative rounded-2xl flex items-center justify-center transition-all duration-500 mb-2 md:mb-4 transform",
+                                        "relative rounded-2xl flex items-center justify-center transition-all duration-500 mb-2 transform",
                                         isMobile ? "w-14 h-14" : "w-20 h-20",
                                         isActive
                                             ? `bg-gradient-to-br ${step.color} text-white shadow-2xl scale-110 ring-4 ring-white/50`
@@ -210,13 +210,13 @@ export default function TransitionCarousel() {
                 </div>
 
                 {/* Content Cards */}
-                <div className="relative">
+                <div className="relative md:-mt-10">
                     {isMobile ? (
                         // Mobile: Single card view
                         <div className="flex justify-center">{renderContentCard(layout.center, "center")}</div>
                     ) : (
                         // Desktop: Three card carousel
-                        <div className="grid grid-cols-3 gap-6 items-center min-h-[600px]">
+                        <div className="grid grid-cols-3 gap-3 items-center min-h-[600px]">
                             <div className="flex justify-center">{renderContentCard(layout.left, "left")}</div>
                             <div className="flex justify-center">{renderContentCard(layout.center, "center")}</div>
                             <div className="flex justify-center">{renderContentCard(layout.right, "right")}</div>

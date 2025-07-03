@@ -100,7 +100,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 py-16">
+            <div className="relative z-10 container mx-auto px-4 md:py-16 py-8">
                 {/* Centered hero content above the light line */}
                 <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto mb-32">
                     <h1 className="text-4xl lg:text-6xl  font-semibold text-white leading-tight">
@@ -135,9 +135,9 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="flex justify-center items-center min-h-screen relative mb-32" style={{ perspective: "500px" }}>
+                <div className="flex justify-center items-center  relative md:mb-32 my-10 " style={{ perspective: "1000px" }}>
                     <div
-                        className={`transition-all duration-3000 ease-out ${showCarousel ? "opacity-100 scale-100 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
+                        className={`transition-all duration-3000 ease-out ${showCarousel ? "opacity-100 scale-120 shadow-[0_0_100px_rgba(59,130,246,0.5)]" : "opacity-0 scale-75"
                             }`}
                         style={{
                             transform: ` scale(${showCarousel ? 0.8 : 0.75})`,
