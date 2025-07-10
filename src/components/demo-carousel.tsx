@@ -97,7 +97,7 @@ export default function TransitionCarousel() {
         return (
             <div
                 className={cn(
-                    "transition-all duration-700 ease-out transform",
+                    "transition-all duration-700 ease-out transform bg-white",
                     isCenter ? "opacity-100 scale-100 z-20" : "opacity-60 scale-90 z-10",
                     "animate-in slide-in-from-bottom-4 fade-in",
                     isMobile && !isCenter && "hidden", // Hide side cards on mobile
@@ -117,7 +117,7 @@ export default function TransitionCarousel() {
                                 isCenter ? "opacity-100" : "opacity-80",
                             )}
                         >
-                            <div className={cn(isMobile ? "w-[300px] h-[200px]" : "w-[580px]  h-[375px]",)}>
+                            <div className={cn(isMobile ? "w-[300px] bg-white h-[200px]" : "w-[580px]  h-[375px]",)}>
                                 <video
                                     key={`video-${step.id}`}
 
