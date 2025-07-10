@@ -6,7 +6,6 @@ import { Navigation } from "@/components/navigation";
 import Reclaim from "@/components/Reclaim";
 import Restore from "@/components/Restore";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import Image from "next/image";
 
 export default function Home() {
   return (
