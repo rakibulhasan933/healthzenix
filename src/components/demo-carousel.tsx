@@ -39,7 +39,6 @@ export default function TransitionCarousel() {
         const checkMobile = () => {
             setIsMobile(window.innerWidth < 768)
         }
-
         checkMobile()
         window.addEventListener("resize", checkMobile)
         return () => window.removeEventListener("resize", checkMobile)
@@ -83,7 +82,7 @@ export default function TransitionCarousel() {
                     <div
                         className={cn(
                             "border-2 border-dashed border-gray-200 rounded-3xl flex items-center justify-center opacity-30",
-                            isMobile ? "w-80 h-80" : "w-[500px] h-96",
+                            isMobile ? "w-[300px] h-[200px]" : "w-[600px] h-96",
                         )}
                     >
                         <span className="text-gray-400 text-sm font-medium"></span>
@@ -93,7 +92,6 @@ export default function TransitionCarousel() {
         }
 
         const isCenter = position === "center"
-        const isActive = step.id === activeStep
         const IconComponent = step.icon
 
         return (
@@ -107,30 +105,48 @@ export default function TransitionCarousel() {
             >
                 <div
                     className={cn(
-                        "relative rounded-3xl p-2 md:p-2 border transition-all duration-500 bg-white",
-                        isMobile ? "w-80 h-80" : "w-[500px] h-96",
-                        isCenter ? "shadow-2xl border-white ring-2 ring-gray-100" : "shadow-lg  border-white hover:shadow-xl",
+                        "relative rounded-3xl p-8 border transition-all duration-500 bg-white",
+                        isMobile ? "w-[300px] h-[200px]" : "w-[600px] h-96",
+                        isCenter ? "shadow-2xl border-white ring-2 ring-gray-100" : "shadow-lg border-white hover:shadow-xl",
                     )}
                 >
-                    <div className="relative text-center space-y-2">
-                        <h3
-                            className={cn(
-                                "font-bold text-gray-900 transition-all duration-500",
-                                isCenter ? (isMobile ? "text-xl" : "text-2xl") : "text-lg",
-                            )}
-                        >
-                            {step.title}
-                        </h3>
-                        <p
-                            className={cn(
-                                "text-gray-600 leading-relaxed transition-all duration-500",
-                                isCenter ? (isMobile ? "text-xs" : "text-sm") : "text-xs",
-                            )}
-                        >
-                            {step.description}
-                        </p>
-                    </div>
+                    <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
 
+                        <div
+                            className={cn(
+                                isCenter ? "opacity-100" : "opacity-80",
+                            )}
+                        >
+                            <div className={cn(isMobile ? "w-[300px] h-[200px]" : "w-[580px]  h-[375px]",)}>
+                                <video
+                                    key={`video-${step.id}`}
+
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-full object-cover rounded shadow-lg"
+                                    onMouseEnter={(e) => {
+                                        const video = e.target as HTMLVideoElement
+                                        video.currentTime = 0
+                                        video.play().catch(console.error)
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        const video = e.target as HTMLVideoElement
+                                        video.pause()
+                                        video.currentTime = 0
+                                    }}
+                                    onLoadedData={(e) => {
+                                        const video = e.target as HTMLVideoElement
+                                        video.currentTime = 0
+
+                                    }}
+                                >
+                                    <source src={`/card-${step.id}.mp4`} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
                     {!isCenter && !isMobile && (
                         <button
                             onClick={() => setActiveStep(step.id)}
@@ -147,7 +163,7 @@ export default function TransitionCarousel() {
         <div className="min-h-screen py-5 md:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col items-center justify-center p-4">
             <div className="w-full max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-4">
+                <div className="text-center mb-12">
                     <h1
                         className={cn(
                             "font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent mb-4",
@@ -160,17 +176,16 @@ export default function TransitionCarousel() {
                 </div>
 
                 {/* Step Icons */}
-                <div className={cn("flex justify-center items-center md:mb-0 mb-4", isMobile ? "gap-4" : "gap-6")}>
+                <div className={cn("flex justify-center items-center mb-8", isMobile ? "gap-4" : "gap-8")}>
                     {steps.map((step) => {
                         const IconComponent = step.icon
                         const isActive = activeStep === step.id
-
                         return (
                             <div key={step.id} className="flex flex-col items-center group">
                                 <button
                                     onClick={() => setActiveStep(step.id)}
                                     className={cn(
-                                        "relative rounded-2xl flex items-center justify-center transition-all duration-500 mb-2 transform",
+                                        "relative rounded-2xl flex items-center justify-center transition-all duration-500 mb-3 transform",
                                         isMobile ? "w-14 h-14" : "w-20 h-20",
                                         isActive
                                             ? `bg-gradient-to-br ${step.color} text-white shadow-2xl scale-110 ring-4 ring-white/50`
@@ -182,7 +197,6 @@ export default function TransitionCarousel() {
                                         className={cn("transition-all duration-300", isActive ? "drop-shadow-sm" : "")}
                                     />
                                 </button>
-
                                 {/* Step Label */}
                                 <div className="text-center">
                                     <div
@@ -210,13 +224,13 @@ export default function TransitionCarousel() {
                 </div>
 
                 {/* Content Cards */}
-                <div className="relative md:-mt-10">
+                <div className="relative">
                     {isMobile ? (
                         // Mobile: Single card view
                         <div className="flex justify-center">{renderContentCard(layout.center, "center")}</div>
                     ) : (
                         // Desktop: Three card carousel
-                        <div className="grid grid-cols-3 gap-3 items-center min-h-[600px]">
+                        <div className="grid grid-cols-3 gap-6 items-center min-h-[500px]">
                             <div className="flex justify-center">{renderContentCard(layout.left, "left")}</div>
                             <div className="flex justify-center">{renderContentCard(layout.center, "center")}</div>
                             <div className="flex justify-center">{renderContentCard(layout.right, "right")}</div>
@@ -226,7 +240,7 @@ export default function TransitionCarousel() {
 
                 {/* Mobile Navigation Dots */}
                 {isMobile && (
-                    <div className="flex justify-center gap-2 mt-6">
+                    <div className="flex justify-center gap-2 mt-8">
                         {steps.map((step) => (
                             <button
                                 key={step.id}
