@@ -14,21 +14,13 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 const carouselImages = [
-    "/doucement.webp",
-    "/doucement.webp",
-    "/doucement.webp",
-]
+    "/image-1.png",
+    "/image-2.png",
+    "/image-3.png",
+    "/image-4.png",
+    "/image-5.png",
+    "/image-6.png"
 
-const icons = [
-
-    "https://cdn.prod.website-files.com/651be5e5347ad738119bc256/66701592cf4853bd00b9c614_Cyber%20essentials.svg",
-    "https://cdn.prod.website-files.com/651be5e5347ad738119bc256/66701592cf4853bd00b9c614_Cyber%20essentials.svg",
-    "https://cdn.prod.website-files.com/651be5e5347ad738119bc256/66701592cf4853bd00b9c614_Cyber%20essentials.svg",
-    "https://cdn.prod.website-files.com/651be5e5347ad738119bc256/66701592cf4853bd00b9c614_Cyber%20essentials.svg",
-    "https://cdn.prod.website-files.com/651be5e5347ad738119bc256/66701592cf4853bd00b9c614_Cyber%20essentials.svg",
-    "https://cdn.prod.website-files.com/651be5e5347ad738119bc256/66701592cf4853bd00b9c614_Cyber%20essentials.svg",
-    "https://cdn.prod.website-files.com/651be5e5347ad738119bc256/66701592cf4853bd00b9c614_Cyber%20essentials.svg",
-    "https://cdn.prod.website-files.com/651be5e5347ad738119bc256/66701592cf4853bd00b9c614_Cyber%20essentials.svg",
 ];
 
 export default function Hero() {
