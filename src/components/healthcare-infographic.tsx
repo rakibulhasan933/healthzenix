@@ -22,7 +22,7 @@ export default function HealthcareInfographic() {
                 <div className="md:mb-8 mb-3">
                     <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                         <iframe
-                            src={"https://www.youtube.com/embed/d1szNOqCs4U?si=NWEWIW_A5MA_BwcQ"}
+                            src={"https://www.youtube.com/embed/55C27MmQI-s?si=YipHdFxmYtOfNkkI"}
                             title="Heidi Ambient Clinical AI - 50% of clinicians' time is not spent on patient care"
                             className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
