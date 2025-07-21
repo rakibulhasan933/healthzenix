@@ -24,7 +24,7 @@ This project is built with [Next.js](https://nextjs.org) and bootstrapped using 
 ---
 
 ## 🛠️ Getting Started
-
+ 
 Follow these steps to set up and run the project locally:
 
 ### 1. Clone the Repository
